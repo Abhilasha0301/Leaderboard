@@ -142,6 +142,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const sortedData = sortData(filteredData, 'hardSolved', hardSolvedDirection, true);
             renderLeaderboard(sortedData);
         });
+        
+        document.getElementById('pin').addEventListener('click',() => {
+            pinDirection = pinDirection === 'click' ? 'pin' : 'not pin';
+            const sortedData = sortData(filteredData, 'pinSolved', pinDirection, true);
+            renderLeaderboard(sortedData);
+        } )
+        
 
     } catch (error) {
         console.error('Error fetching data:', error);
